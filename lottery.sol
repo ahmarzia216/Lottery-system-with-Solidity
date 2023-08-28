@@ -20,7 +20,7 @@ contract lottery
         // require(msg.sender== manager);
         return address(this).balance;
     }
-    function random() public view returns(uint)
+    function random() public view returns(uint) //Do not use for Real time project because sometime it's not work perfectly 
     {
      return uint(keccak256(abi.encodePacked(block.prevrandao,block.timestamp, participants.length)));
     }
